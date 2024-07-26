@@ -1,0 +1,17 @@
+{
+  "name": "lamda-function",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "joi": "^17.13.3",
+    "nodemon": "^3.1.4",
+    "serverless-offline": "^13.6.0"
+  }
+}

@@ -1,0 +1,19 @@
+provider:
+    role: arn:aws:iam::388288734107:role/sweply-role-api
+    vpc:
+        securityGroupIds:
+            - sg-005c472188d98fba3
+        subnetIds:
+            - subnet-0e87c31a56d6ae898
+            - subnet-01f5488ebf372b475
+            - subnet-0aa9a49e912695b8b
+            - subnet-03c8973cda7ed2569
+    environment:
+        httpClientTimeout: 30000
+        awsSdkTimeout: 30000
+        awsSdkConnectTimeout: 5000
+        awsSdkMaxRetries: 2
+        mySqlConnectTimeout: 10000
+        secretAccountManagementId: "dev/v2/ad_launcher"
+        DATABASE_URL: "postgresql://postgres:rxb4zXV1lKQ0QYvyodUh@v2-dev-db.cl8fxo4c9adm.me-south-1.rds.amazonaws.com/ad_launcher?schema=public"
+functions:

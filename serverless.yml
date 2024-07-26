@@ -1,0 +1,33 @@
+service: snapchatanalytics
+
+frameworkVersion: "3"
+
+plugins:
+  - serverless-offline
+
+provider:
+  name: aws
+  runtime: nodejs20.x
+  stage: d
+  timeout: 120
+  memorySize: 512
+  region: me-south-1
+  role: ${file(./serverless/${self:provider.stage}.yml):provider.role}
+  environment: ${file(./serverless/${self:provider.stage}.yml):provider.environment}
+  vpc: ${file(./serverless/${self:provider.stage}.yml):provider.vpc}
+
+functions:
+  userRegisterHandler:
+    name: v2-${self:provider.stage}-${self:service}-userRegisterHandler
+    description: userRegisterHandler user for sweply.
+    handler: userRegister.userRegisterHandler
+    events:
+    - http:
+        path: /user-register
+        method: post
+    environment:
+      ENV_MODE: PRODUCTION
+  
+
+  
+

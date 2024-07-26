@@ -1,0 +1,11 @@
+{
+    "exec": "serverless offline",
+    "watch": [
+        "*.js",
+        "*.json",
+        "serverless.yml",
+        "prisma/schema.prisma",
+        ".env"
+    ],
+    "ext": "js,json,yml,prisma"
+}
